@@ -52,7 +52,6 @@ router.get("/:id", async (req, res) => {
 });
 
 //Follow a user
-
 router.put("/:id/follow", async (req, res) => {
   if (req.body.userId !== req.params.id) {
     try {
@@ -74,7 +73,6 @@ router.put("/:id/follow", async (req, res) => {
 });
 
 //Un-follow a user
-
 router.put("/:id/unfollow", async (req, res) => {
     if (req.body.userId !== req.params.id) {
       try {
