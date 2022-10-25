@@ -1,7 +1,7 @@
 import TopBar from "../../components/topBar/TopBar";
 import SideBar from "../../components/sideBar/SideBar";
-// import RightBar from "../../components/rightBar/RightBar";
-// import Feed from "../../components/feed/Feed";
+import RightBar from "../../components/rightBar/RightBar";
+import Feed from "../../components/feed/Feed";
 
 export default function Home() {
     return (
@@ -9,8 +9,8 @@ export default function Home() {
         <TopBar />
         <div className="homeContainer">
           <SideBar />
-          {/* <Feed/>
-          <RightBar/> */}
+          <Feed/>
+          <RightBar/>
       </div>
       </>
     );
