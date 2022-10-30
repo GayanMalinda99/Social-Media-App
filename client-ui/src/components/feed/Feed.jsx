@@ -4,7 +4,7 @@ import Share from "../share/Share";
 import { Posts } from "../../dummyData";
 import axios from "axios";
 
-export default function Feed() {
+export default function Feed({ username }) {
   const [posts, setPosts] = useState([]);
   
   useEffect(() => {
@@ -25,9 +25,9 @@ export default function Feed() {
     <div className="feed">
       <div className="feedWrapper">
         <Share />
-        {/* {Posts.map((p) => (
-          <Post key={p.id} post={p} />
-        ))} */}
+        {posts.map((p) => (
+          <Post key={p._id} post={p} />
+        ))}
       </div>
     </div>
   );
