@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Users } from "../../dummyData";
-import axios from "axios";
+import axios from "axios"; 
 
 export default function Post({ post }) {
-  const [like,setLike] = useState(post.like)
+  const [like,setLike] = useState(post.likes.length)
   const [isLiked,setIsLiked] = useState(false)
   const [user, setUser] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -28,7 +28,11 @@ export default function Post({ post }) {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src={user.profilePicture}
+              src={
+                user.profilePicture
+                  ? PF + user.profilePicture
+                  : PF + "person/noAvatar.png"
+              }
               alt=""
             />
             <span className="postUsername">
@@ -42,7 +46,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.photo} alt="" />
+          <img className="postImg" src={PF + post.img} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
