@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default function Feed({ username }) {
   const [posts, setPosts] = useState([]);
+  const user  = "";
   
   useEffect(() => {
     const fetchPosts = async () => {
